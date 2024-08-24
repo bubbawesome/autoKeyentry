@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Key Press Automation",
+  "version": "1.0",
+  "description": "Automatically enters keyboard key presses with a delay.",
+  "permissions": ["activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],  // Adjust as necessary for specific sites
+      "js": ["content.js"]
+    }
+  ]
+}
