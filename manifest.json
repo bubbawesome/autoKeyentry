@@ -4,6 +4,7 @@
   "version": "1.0",
   "description": "Automatically enters keyboard key presses with a delay.",
   "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["*://*/*"],  // Change this to specific sites as needed
   "background": {
     "service_worker": "background.js"
   },
@@ -12,7 +13,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],  // Adjust as necessary for specific sites
+      "matches": ["<all_urls>"],  // Adjust this to target specific sites if necessary
       "js": ["content.js"]
     }
   ]
